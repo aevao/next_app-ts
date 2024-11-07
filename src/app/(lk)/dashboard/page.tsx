@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useState } from "react";
-
+import view from './view'
+import ProfilePage from "./profile/page";
 interface Contacts {
   userId: number;
   id: number;
@@ -16,7 +17,7 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+        const response = await fetch('https://jsonplaceholder.typicode.com/todos/3');
         const data = await response.json();
         setContacts(data);
         console.log(data)
@@ -40,6 +41,9 @@ const DashboardPage = () => {
       {contacts && (
         <p>{contacts.title}</p>
       )}
+     {contacts?.title && <ProfilePage title={contacts.title} />}
+
+      
     </div>
   );
 };

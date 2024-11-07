@@ -1,8 +1,11 @@
 
+interface props {
+    title: string ;
+}
 
-
-export default function ProfilePage () {
+const ProfilePage:React.FC<props>  = (props) => {
     return <div>
-        <h1>ProfilePage</h1>
+        <h1>{props.title} second</h1>
     </div>
 }
+export default ProfilePage 

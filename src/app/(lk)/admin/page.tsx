@@ -6,5 +6,5 @@ export default function AdminPage() {
      const handleClick = () => {
         console.log(test)
      } 
-    return <div onClick={handleClick}> Admin </div>
+    return <div > Admin </div>
 }
